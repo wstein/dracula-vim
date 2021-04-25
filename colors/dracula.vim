@@ -40,6 +40,7 @@ let s:bgdark    = g:dracula#palette.bgdark
 let s:bgdarker  = g:dracula#palette.bgdarker
 
 let s:comment   = g:dracula#palette.comment
+let s:comment2  = g:dracula#palette.comment2
 let s:selection = g:dracula#palette.selection
 let s:subtle    = g:dracula#palette.subtle
 
@@ -163,6 +164,7 @@ call s:h('DraculaFgStrikethrough', s:fg, s:none, [s:attrs.strikethrough])
 
 call s:h('DraculaComment', s:comment)
 call s:h('DraculaCommentBold', s:comment, s:none, [s:attrs.bold])
+call s:h('DraculaCommentBoldItalic', s:comment, s:none, [s:attrs.bold, s:attrs.italic])
 
 call s:h('DraculaSelection', s:none, s:selection)
 
@@ -203,8 +205,8 @@ call s:h('DraculaInfoLine', s:none, s:none, [s:attrs.undercurl], s:cyan)
 
 call s:h('DraculaTodo', s:cyan, s:none, [s:attrs.bold, s:attrs.inverse])
 call s:h('DraculaSearch', s:green, s:none, [s:attrs.inverse])
-call s:h('DraculaBoundary', s:comment, s:bgdark)
-call s:h('DraculaWinSeparator', s:comment, s:bgdark)
+call s:h('DraculaBoundary', s:comment2, s:bgdark)
+call s:h('DraculaWinSeparator', s:comment2, s:bgdark)
 call s:h('DraculaLink', s:cyan, s:none, [s:attrs.underline])
 
 if g:dracula_high_contrast_diff
@@ -248,7 +250,7 @@ hi! link ErrorMsg     DraculaRedInverse
 hi! link FoldColumn   DraculaSubtle
 hi! link Folded       DraculaBoundary
 hi! link IncSearch    DraculaOrangeInverse
-call s:h('LineNr', s:comment)
+call s:h('LineNr', s:comment2)
 hi! link MoreMsg      DraculaFgBold
 hi! link NonText      DraculaSubtle
 hi! link Pmenu        DraculaBgDark
@@ -259,7 +261,7 @@ call s:h('PmenuMatch', s:cyan, s:bgdark)
 call s:h('PmenuMatchSel', s:cyan, s:selection)
 hi! link Question     DraculaFgBold
 hi! link Search       DraculaSearch
-call s:h('SignColumn', s:comment)
+call s:h('SignColumn', s:comment2)
 hi! link TabLine      DraculaBoundary
 hi! link TabLineFill  DraculaBgDark
 hi! link TabLineSel   Normal
@@ -327,7 +329,7 @@ else
   hi! link SpecialKey DraculaPink
 endif
 
-hi! link Comment DraculaComment
+hi! link Comment DraculaCommentBoldItalic
 hi! link Underlined DraculaFgUnderline
 hi! link Todo DraculaTodo
 
